@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>SCRIPTS</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<p>This repository contains data and scripts used in the unpublished paper</p>
+
+<p><strong>Genome-wide association of Vancomycin-Intermediate Resistance in Staphylococcus aureus</strong></p>
+
+<p>by</p>
+
+<p><em>Md Tauqeer Alam, Robert A. Petit III, Emily K. Crispell, Timothy Thornton, 
+Karen N. Conneely, Yunxuan Jiang, Sarah W. Satola and Timothy D. Read</em></p>
+
+<h3>SCRIPTS</h3>
+
+<h6>visa-table-manipulation.R</h6>
+
+<pre><code>Script to automate rare mutation counting.
+</code></pre>
+
+<h6>visa_gwas.R</h6>
+
+<pre><code>Script to automate ROADTRIPS and QROADTRIPS analysis using E-Test values.
+</code></pre>
+
+<h6>visa_gwas_bmd.R</h6>
+
+<pre><code>Script to automate ROADTRIPS and QROADTRIPS analysis using BMD values.
+</code></pre>
+
+<h6>visa_gwas_pap-auc.R</h6>
+
+<pre><code>Script to automate ROADTRIPS and QROADTRIPS analysis using PAP-AUC values.
+</code></pre>
+
+<h6>visa_gwas_functions.R</h6>
+
+<pre><code>Script containing functions for process data to be used with ROADTRIPS and 
+QROADTRIPS.
+</code></pre>
+
+<h3>DATA</h3>
+
+<h6>superAlignProt124.phy</h6>
+
+<pre><code>Alignment of core genes 
+</code></pre>
+
+<h6>superAlignDNA124.phy</h6>
+
+<pre><code>Alignment of core proteins 
+</code></pre>
+
+<h6>superAlignDNA124.fna</h6>
+
+<pre><code>Alignment of core proteins
+</code></pre>
+
+<h6>VISA_feature_table.xls</h6>
+
+<pre><code>Created by subsetting the SNP matrix by the 16 candidate genes.  Also added 
+in the vector of SNP frequency for in the Staph genome database.
+</code></pre>
+
+<h6>VISA-feature-table-v2-PAPAUC</h6>
+
+<pre><code>Transpose VISA_feature_table.xls and manually removed all SNPs with a count 
+&gt; 81 (ie common SNPs).  Add PAP-AUC data. Using the make prelim version of 
+candidate SNP frequency table.
+</code></pre>
+
+<h6>VISA-feature-table-v2-etest</h6>
+
+<pre><code>From VISA-feature-table-v2-PAPAUC but used for Etest counts.
+</code></pre>
+
+<h6>VISA-feature-table-v3.csv</h6>
+
+<pre><code>Adapted from VISA-feature-table-v2-etest.  Stripped out unnecessary fields.  This is the input file for the Shiny server and the random forest model.    
+</code></pre>
+
+<h6>genotype.txt</h6>
+
+<pre><code>A matrix on SNPs for the total 75 samples.
+</code></pre>
+
+<h6>phenotype.txt</h6>
+
+<pre><code>Phenotype values from E-Test for each sample.
+</code></pre>
+
+<h6>phenotype_bmd.txt</h6>
+
+<pre><code>Phenotype values from BMD for each sample.
+</code></pre>
+
+<h6>phenotype_pap-auc.txt</h6>
+
+<pre><code>Phenotype values from PAP-AUC for each sample.
+</code></pre>
+
+</body>
+
+</html>
+

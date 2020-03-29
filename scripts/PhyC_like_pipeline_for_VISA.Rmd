@@ -1,0 +1,64 @@
+Trying to find significant genes using PhyC-like aproach
+========================================================
+Originally called "VISA-anc-reconstruction-phangorn.Rmd and accidently deleted.
+
+
+Using phangorn to construct and navigate tree and ancestry.
+See http://cran.cermin.lipi.go.id/web/packages/phangorn/vignettes/Ancestral.pdf
+
+
+```{r}
+library(phangorn)
+library(ape)
+source('./tims_phangorn_tree_functions.R')
+mysqs <- read.FASTA("~/Dropbox/TAUQEER/VISA-SNPs/VISA-manuscript-and-tables/superAln124DNA.fasta")
+#phangorn object
+phdata <- as.phyDat(mysqs)
+####################
+#Tree building
+###################
+tree1<-pratchet(phdata)
+prune_branches <- c("JKD6159","NC_016941","NC_017349","NC_022442", "NC_017337","NC_022443")
+tree2 <-drop.tip(tree1, prune_branches)
+tree3 <- root(tree2,"NC_007622")
+tree4 <- optim.parsimony(tree3, phdata)
+tree <- acctran(tree4,phdata) 
+plot(tree, cex = 0.5)
+anc.mpr = ancestral.pars(tree, phdata, "MPR")
+fit = pml(tree, phdata)
+anc.ml = ancestral.pml(fit, type = "ml")
+#####################
+#Run convergence pipeline
+#####################
+VSSA_names <- c("2614","3782",  "4597",  "5535",  "8081","834N","8535","CA26","CA541","EUH_13","EUH_15","EUH_25","GA27","GA48963","GA50245","GA50819","GA51254",  "GA53617","GA53649","SR1065","SR1129","SR2609","SR2852","SR4155","SR4156",	"CA105","CA11","CA39","CA436","CA544","CA545","CA598","CA9",	"GA12","GA15","GA231","GA984","MN055","NY341","NY439","NY593","SR1746","SR2091","SR3569","SR3777","SR4035","SR4153","SR4187","120336")
+VISA_names <- c( "MN105",    "SR1287",  "SR220",	"407","122-VISA",	"Grady1",	"NY224",	"NY356",	"NY360",	"NY417",	"SR3585",	"SR3732",	"SR4152",	"126",	"312",	"115",	"107",		"217",	"221",	"506",	"109",	"504",	"123", "120335","120337","120338")
+
+
+temp_VSSA <- edges_of_trees(tree,VSSA_names,"VSSA strains")
+VSSA_snps <- snps_on_edges(anc.mpr,temp_VSSA)
+temp_VISA <- edges_of_trees(tree,VISA_names,"VISA strains")
+VISA_snps <- snps_on_edges(anc.mpr,temp_VISA)
+clean_VISA_snps <- clean_snp_list(VISA_snps)
+clean_VSSA_snps <- clean_snp_list(VSSA_snps)
+restable <- make_snp_table(clean_VSSA_snps,clean_VISA_snps)
+temp <- fisher_snp_table(restable)
+temp.ordered <- temp[order(temp$Fisher),]
+```
+Note - can be extended to ML
+fit = pml(tree, phdata)
+anc.ml = ancestral.pml(fit, type = "ml")
+
+PLot most significant mutation
+
+```{rig.width=7, fig.height=6}
+par(cex = 0.2)
+plotAnc(tree,anc.mpr,395, cex.pie = 0.2, col = c("purple","white","blue","red"))
+```
+
+Find location of the mutation.
+Note - from Tauqeer:  "On  the DNA alignment the coordinate is- 13885-17433: Starts with TTGGCA and ends with ACTGAT bases"
+```{r}
+#my own version of the plotAnc code
+t10 <- lapply(names(anc.mpr), function(x) anc.mpr[[x]][395,])
+df395 <- matrix(unlist(t10), byrow = T, nrow = 234)
+```

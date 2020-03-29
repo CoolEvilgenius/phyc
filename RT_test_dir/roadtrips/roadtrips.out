@@ -1,0 +1,7 @@
+user specified SNP names file: snpnames
+phenotype file: phenofile
+genotype file: genofile
+pedigree information file: pedinfo
+prevalence file: prevalence
+Calculating The Empirical Covariance Matrix. 
+Empirical Covariance Matrix has been calculated.  Now testing each SNP for association.

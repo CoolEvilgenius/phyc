@@ -1,0 +1,30 @@
+The visa-gwas repo is at https://bitbucket.org/rpetit3/visa-gwas
+
+Dowload (using the cloud icon on the left hand side), or clone using git.
+
+ROADTRIPS can be accessed at http://www.stat.uchicago.edu/~mcpeek/software/ROADTRIPS/download.html
+
+Download ROADTRIPS1.2.tar.gz, untar and cd into the ROADTRIPS directory
+
+run the command:
+
+	% sudo make
+
+Type in your password and accept the license.  (You will need a GCC compiler installed).
+<Optional>
+move directory to /usr/local/ , set on path and open a new terminal window (exact commands depend on your system)
+
+	sudo mv ROADTRIPS /usr/local/
+	
+In your .profile file add..
+
+	PATH=/usr/local/ROADTRIPS:$PATH
+
+Open terminal and type 'ROADTRIPS', you should get this message,
+	phenotype file: phenofile
+	genotype file: genofile
+	pedigree information file: pedinfo
+	prevalence file: prevalence
+	Can't open prevalence
+	
+Switch to R console or RStudio and follow instructions

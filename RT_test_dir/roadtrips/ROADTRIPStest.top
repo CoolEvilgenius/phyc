@@ -1,0 +1,80 @@
+Below is a list of the top 20 markers with the smallest p-values using the RM test statistic 
+
+**************************************************
+
+MARKER 12613: X581060 has a p-value of 1.14898e-05
+MARKER 42912: X2244319 has a p-value of 0.00251884
+MARKER 5549: X262110 has a p-value of 0.00579938
+MARKER 18370: X896624 has a p-value of 0.0082802
+MARKER 33265: X1635311 has a p-value of 0.0082802
+MARKER 33567: X1653022 has a p-value of 0.0082802
+MARKER 36325: X1812434 has a p-value of 0.0082802
+MARKER 38039: X1912801 has a p-value of 0.0082802
+MARKER 42781: X2228535 has a p-value of 0.0082802
+MARKER 2796: X153195 has a p-value of 0.0082802
+MARKER 49662: X2568428 has a p-value of 0.0082802
+MARKER 52979: X2697777 has a p-value of 0.0082802
+MARKER 54413: X2753965 has a p-value of 0.0082802
+MARKER 47912: X2488507 has a p-value of 0.0087644
+MARKER 52195: X2662660 has a p-value of 0.0124799
+MARKER 3085: X163970 has a p-value of 0.0124799
+MARKER 52194: X2662659 has a p-value of 0.0124799
+MARKER 512: X21990 has a p-value of 0.0132206
+MARKER 3084: X163932 has a p-value of 0.0132206
+MARKER 23524: X1168786 has a p-value of 0.0136424
+
+
+############################################### 
+
+Below is a list of the top 20 markers with the smallest p-values using the RCHI test statistic 
+
+**************************************************
+
+MARKER 12613: X581060 has a p-value of 1.14898e-05
+MARKER 42912: X2244319 has a p-value of 0.00251884
+MARKER 5549: X262110 has a p-value of 0.00579938
+MARKER 18370: X896624 has a p-value of 0.0082802
+MARKER 33265: X1635311 has a p-value of 0.0082802
+MARKER 33567: X1653022 has a p-value of 0.0082802
+MARKER 36325: X1812434 has a p-value of 0.0082802
+MARKER 38039: X1912801 has a p-value of 0.0082802
+MARKER 42781: X2228535 has a p-value of 0.0082802
+MARKER 2796: X153195 has a p-value of 0.0082802
+MARKER 49662: X2568428 has a p-value of 0.0082802
+MARKER 52979: X2697777 has a p-value of 0.0082802
+MARKER 54413: X2753965 has a p-value of 0.0082802
+MARKER 47912: X2488507 has a p-value of 0.0087644
+MARKER 52195: X2662660 has a p-value of 0.0124799
+MARKER 3085: X163970 has a p-value of 0.0124799
+MARKER 52194: X2662659 has a p-value of 0.0124799
+MARKER 512: X21990 has a p-value of 0.0132206
+MARKER 3084: X163932 has a p-value of 0.0132206
+MARKER 23524: X1168786 has a p-value of 0.0136424
+
+
+############################################### 
+
+Below is a list of top 20 markers with the smallest p-values using the RW test statistic 
+
+**************************************************
+
+MARKER 12613: X581060 has a p-value of 1.14898e-05
+MARKER 42912: X2244319 has a p-value of 0.00251884
+MARKER 5549: X262110 has a p-value of 0.00579938
+MARKER 18370: X896624 has a p-value of 0.0082802
+MARKER 33265: X1635311 has a p-value of 0.0082802
+MARKER 33567: X1653022 has a p-value of 0.0082802
+MARKER 36325: X1812434 has a p-value of 0.0082802
+MARKER 38039: X1912801 has a p-value of 0.0082802
+MARKER 42781: X2228535 has a p-value of 0.0082802
+MARKER 2796: X153195 has a p-value of 0.0082802
+MARKER 49662: X2568428 has a p-value of 0.0082802
+MARKER 52979: X2697777 has a p-value of 0.0082802
+MARKER 54413: X2753965 has a p-value of 0.0082802
+MARKER 47912: X2488507 has a p-value of 0.0087644
+MARKER 52195: X2662660 has a p-value of 0.0124799
+MARKER 3085: X163970 has a p-value of 0.0124799
+MARKER 52194: X2662659 has a p-value of 0.0124799
+MARKER 512: X21990 has a p-value of 0.0132206
+MARKER 3084: X163932 has a p-value of 0.0132206
+MARKER 23524: X1168786 has a p-value of 0.0136424

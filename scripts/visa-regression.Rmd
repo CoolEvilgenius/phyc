@@ -1,0 +1,37 @@
+Narrative of VISA regression analysis
+========================================================
+
+Imported visa.data from CSV. This file was created by manually counting for each of the rows in the PAP-AUC excel file the total number of candidate loci and the number of loci that were in the more restrictive ECM+RMCG model.
+
+```{r}
+visa.data <- read.csv("./data/regression_input.csv")
+attach(visa.data)
+```
+
+Exploratory plots and linear models
+
+```{r fig.width=7, fig.height=6}
+plot(model_loci,PAP.AUC)
+lm1 <- lm(PAP.AUC ~ model_loci)
+abline(a = lm1$coefficients[1], b = lm1$coefficients[2], col = "red")
+plot(model_loci,Etest)
+lm2 <- lm(Etest ~ model_loci)
+abline(a = lm2$coefficients[1], b = lm2$coefficients[2], col = "red")
+plot(total_loci,PAP.AUC)
+lm3 <- lm(PAP.AUC ~ total_loci)
+abline(a = lm3$coefficients[1], b = lm3$coefficients[2], col = "red")
+plot(total_loci,Etest)
+lm4 <- lm(Etest ~ total_loci)
+abline(a = lm4$coefficients[1], b = lm4$coefficients[2], col = "red")
+boxplot(PAP.AUC ~ model_loci)
+boxplot(Etest ~ model_loci)
+boxplot(PAP.AUC ~ total_loci)
+boxplot(Etest ~ total_loci)
+```
+
+Best linear model = PAP.AUC ~ model_loci
+
+```{r}
+summary(lm1)
+```
+
